@@ -1,0 +1,135 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <Color x:Key="EffectColor">#BDBDBD</Color>
+    
+    <!--透明度-->
+    <system:Double x:Key="Un0Opcity">0</system:Double>
+    <system:Double x:Key="Un1Opcity">0.1</system:Double>
+    <system:Double x:Key="Un2Opcity">0.2</system:Double>
+    <system:Double x:Key="Un3Opcity">0.3</system:Double>
+    <system:Double x:Key="Un4Opcity">0.4</system:Double>
+    <system:Double x:Key="Un5Opcity">0.5</system:Double>
+    <system:Double x:Key="Un6Opcity">0.6</system:Double>
+    <system:Double x:Key="Un7Opcity">0.7</system:Double>
+    <system:Double x:Key="Un8Opcity">0.8</system:Double>
+    <system:Double x:Key="Un9Opcity">0.9</system:Double>
+    <system:Double x:Key="Un10Opcity">1</system:Double>
+    
+    <!--间隔大小-->
+    <system:Double x:Key="PlaceSize">8</system:Double>
+    <system:Double x:Key="Place2Size">16</system:Double>
+    
+    <!--字体大小-->
+    <system:Double x:Key="DefaultFontSize">14</system:Double>
+    <system:Double x:Key="SmallFontSize">12</system:Double>
+    <system:Double x:Key="BigFontSize">16</system:Double>
+    <system:Double x:Key="Big2FontSize">18</system:Double>
+    <system:Double x:Key="Big3FontSize">20</system:Double>
+    <system:Double x:Key="Big4FontSize">22</system:Double>
+    <system:Double x:Key="Big5FontSize">24</system:Double>
+    <system:Double x:Key="Big6FontSize">26</system:Double>
+    <system:Double x:Key="Big7FontSize">28</system:Double>
+    <system:Double x:Key="Big8FontSize">30</system:Double>
+    <system:Double x:Key="Big9FontSize">32</system:Double>
+    <system:Double x:Key="Big10FontSize">34</system:Double>
+    
+    <!--圆角大小-->
+    <CornerRadius x:Key="CornerRadius3">3</CornerRadius>
+    <CornerRadius x:Key="CornerRadius5">5</CornerRadius>
+    <CornerRadius x:Key="CornerRadius8">8</CornerRadius>
+    <CornerRadius x:Key="CornerRadius10">10</CornerRadius>
+    <CornerRadius x:Key="CornerRadius12">12</CornerRadius>
+    <CornerRadius x:Key="CornerRadius15">15</CornerRadius>
+    <CornerRadius x:Key="CornerRadius20">20</CornerRadius>
+    <CornerRadius x:Key="CornerRadius25">25</CornerRadius>
+    <CornerRadius x:Key="CornerRadius30">30</CornerRadius>
+    <CornerRadius x:Key="CornerRadius35">35</CornerRadius>
+    <CornerRadius x:Key="CornerRadius40">40</CornerRadius>
+    <CornerRadius x:Key="CornerRadius45">45</CornerRadius>
+    <CornerRadius x:Key="CornerRadius50">50</CornerRadius>
+
+
+    <!--  Effect  -->
+    <DropShadowEffect x:Key="AllDirectionEffect"
+                      BlurRadius="5"
+                      Direction="0"
+                      Opacity="0.7"
+                      ShadowDepth="0"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="AllDirectionEffect2"
+                      BlurRadius="7"
+                      Direction="0"
+                      Opacity="0.8"
+                      ShadowDepth="0"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="AllDirectionEffect3"
+                      BlurRadius="9"
+                      Direction="0"
+                      Opacity="0.85"
+                      ShadowDepth="0"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="AllDirectionEffect4"
+                      BlurRadius="11"
+                      Direction="0"
+                      Opacity="0.9"
+                      ShadowDepth="0"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="AllDirectionEffect5"
+                      BlurRadius="13"
+                      Direction="0"
+                      Opacity="0.95"
+                      ShadowDepth="0"
+                      Color="{StaticResource EffectColor}" />
+
+    <DropShadowEffect x:Key="RightTopEffect"
+                      BlurRadius="3"
+                      Direction="45"
+                      Opacity="0.7"
+                      ShadowDepth="3"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="LeftTopEffect"
+                      BlurRadius="3"
+                      Direction="135"
+                      Opacity="0.7"
+                      ShadowDepth="3"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="RightBottomEffect"
+                      BlurRadius="3"
+                      Direction="-45"
+                      Opacity="0.7"
+                      ShadowDepth="3"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="LeftBottomEffect"
+                      BlurRadius="3"
+                      Direction="-135"
+                      Opacity="0.7"
+                      ShadowDepth="3"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="TopEffect"
+                      BlurRadius="6"
+                      Direction="90"
+                      Opacity="0.7"
+                      ShadowDepth="2"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="BottomEffect"
+                      BlurRadius="6"
+                      Direction="-90"
+                      Opacity="0.7"
+                      ShadowDepth="2"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="RightEffect"
+                      BlurRadius="6"
+                      Direction="0"
+                      Opacity="0.7"
+                      ShadowDepth="2"
+                      Color="{StaticResource EffectColor}" />
+    <DropShadowEffect x:Key="LeftEffect"
+                      BlurRadius="6"
+                      Direction="180"
+                      Opacity="0.7"
+                      ShadowDepth="2"
+                      Color="{StaticResource EffectColor}" />
+
+</ResourceDictionary>

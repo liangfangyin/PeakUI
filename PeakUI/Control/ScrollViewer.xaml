@@ -1,0 +1,38 @@
+﻿<Window x:Class="PeakUI.Control.ScrollViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PeakUI.Control"
+        xmlns:peak="clr-namespace:PeakUI.WPF;assembly=PeakUI.WPF"
+        mc:Ignorable="d"
+        Title="ScrollViewer" Height="600" Width="1200">
+    <Grid>
+        <StackPanel>
+            <WrapPanel Margin="10">
+                <TextBlock FontSize="20">滚动条</TextBlock>
+            </WrapPanel>
+            <ScrollViewer  Width="500" Height="200">
+                <StackPanel>
+                    <Border Width="500" Height="80" Background="Red"></Border>
+                    <Border Width="500" Height="80" Background="Blue"></Border>
+                    <Border Width="500" Height="80" Background="Green"></Border>
+                    <Border Width="500" Height="80" Background="Olive"></Border>
+                    <Border Width="500" Height="80" Background="Yellow"></Border>
+                </StackPanel>
+            </ScrollViewer>
+            <WrapPanel Margin="10">
+                <TextBlock FontSize="20">横向滚动条</TextBlock>
+            </WrapPanel>
+            <ScrollViewer  Width="500" Height="200" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border Width="700" Height="80" Background="Red"></Border>
+                    <Border Width="700" Height="80" Background="Blue"></Border>
+                    <Border Width="700" Height="80" Background="Green"></Border>
+                    <Border Width="700" Height="80" Background="Olive"></Border>
+                    <Border Width="700" Height="80" Background="Yellow"></Border>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>

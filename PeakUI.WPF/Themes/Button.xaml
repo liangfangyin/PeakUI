@@ -1,0 +1,277 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:peak="clr-namespace:PeakUI.WPF">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/PeakUI.WPF;component/Themes/Resources/Color.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/PeakUI.WPF;component/Themes/Resources/Size.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+
+
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource BlackForeground}"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource LightBorderSolidColorBrush}"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Height" Value="35"></Setter> 
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="peak:ControlAttribute.CornerRadius" Value="{DynamicResource CornerRadius5}"></Setter> 
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius),RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <Grid> 
+                            <Border x:Name="effectBorder" Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius),RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                    Effect="{DynamicResource RightBottomEffect}" Visibility="Collapsed"/>
+                            <StackPanel Height="{TemplateBinding Height}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Orientation="Horizontal">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                                <peak:Icon  x:Name="preContent" Grid.Column="0" Margin="4"
+                                            Type="{Binding Path=(peak:ButtonAttribute.PreIcon),RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Height="{TemplateBinding Height}" Foreground="{TemplateBinding Foreground}" VerticalContentAlignment="Center" 
+                                            Visibility="{Binding Path=(peak:ButtonAttribute.IsPreContent),RelativeSource={RelativeSource Mode=TemplatedParent}}"></peak:Icon>
+                                
+                                <ContentPresenter x:Name="contentPresenter" Grid.Column="1"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Focusable="False"
+                                                  RecognizesAccessKey="True"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                
+                                <peak:Icon  x:Name="postContent" Grid.Column="2" Margin="4"
+                                            Type="{Binding Path=(peak:ButtonAttribute.PostIcon),RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Height="{TemplateBinding Height}" Foreground="{TemplateBinding Foreground}" VerticalContentAlignment="Center" 
+                                            Visibility="{Binding Path=(peak:ButtonAttribute.IsPostContent),RelativeSource={RelativeSource Mode=TemplatedParent}}"></peak:Icon>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="{DynamicResource Un8Opcity}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="{DynamicResource Un5Opcity}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--镂空按钮-->
+    <Style x:Key="PrimaryFillButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BrandLight5SolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource BrandSolidColorBrush}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource BrandSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="SuccessFillButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Background" Value="{DynamicResource SuccessLight5SolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource SuccessSolidColorBrush}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource SuccessSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="InfoFillButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Background" Value="{DynamicResource LighterFillSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource InfoSolidColorBrush}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource InfoSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="WaringFillButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Background" Value="{DynamicResource WarningLight5SolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource WarningSolidColorBrush}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource WarningSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="DangerFillButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Background" Value="{DynamicResource DangerLight5SolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
+    </Style>
+
+    
+    <!--填充按钮-->
+    <Style x:Key="DefaultButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Background" Value="{DynamicResource WriteFillSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource BlackForeground}"></Setter>
+    </Style>
+
+    <Style x:Key="PrimaryButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BrandSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource WriteFillSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="SuccessButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource SuccessSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource WriteFillSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="InfoButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource InfoSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource WriteFillSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="WaringButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource WarningSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource WriteFillSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="DangerButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource WriteFillSolidColorBrush}"></Setter>
+    </Style>
+
+
+
+    <!--链接按钮-->
+    <Style x:Key="DefaultLabelButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BaseFillSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource BlackForeground}"></Setter>
+    </Style>
+
+    <Style x:Key="PrimaryLabelButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BaseFillSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource BrandSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="SuccessLabelButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BaseFillSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource SuccessSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="InfoLabelButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BaseFillSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource InfoSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="WaringLabelButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BaseFillSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource WarningSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="DangerLabelButton"  BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BaseFillSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
+    </Style>
+
+
+    <!--文字按钮-->
+    <Style x:Key="PeakTextButton" BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="{DynamicResource WhiteForeground}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource BrandSolidColorBrush}"></Setter>
+        <Setter Property="Width" Value="Auto"></Setter>
+        <Setter Property="Height" Value="Auto"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F0F0F0"></Setter>
+                <Setter Property="Foreground" Value="{DynamicResource BrandSolidColorBrush}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PeakTextPrimaryButton" BasedOn="{StaticResource PeakTextButton}" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource BrandSolidColorBrush}" />
+    </Style>
+
+    <Style x:Key="PeakTextErrorButton" BasedOn="{StaticResource PeakTextButton}" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource DangerSolidColorBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F0F0F0"></Setter>
+                <Setter Property="Foreground" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PeakTextSuccessButton" BasedOn="{StaticResource PeakTextButton}" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource SuccessSolidColorBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F0F0F0"></Setter>
+                <Setter Property="Foreground" Value="{DynamicResource SuccessSolidColorBrush}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PeakTextInfoButton" BasedOn="{StaticResource PeakTextButton}" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource InfoSolidColorBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F0F0F0"></Setter>
+                <Setter Property="Foreground" Value="{DynamicResource InfoSolidColorBrush}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PeakTextWarningButton" BasedOn="{StaticResource PeakTextButton}" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource WarningSolidColorBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F0F0F0"></Setter>
+                <Setter Property="Foreground" Value="{DynamicResource WarningSolidColorBrush}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+    <!--文件上传-->
+    <Style x:Key="FileUpload" BasedOn="{StaticResource PeakTextButton}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="113"></Setter>
+        <Setter Property="Height" Value="113"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Background" Value="#F5F5F5"></Setter>
+        <Setter Property="BorderBrush" Value="#DDDDDD"></Setter>
+        <Setter Property="Margin" Value="0"></Setter>
+        <Setter Property="Padding" Value="0"></Setter>
+        <Setter Property="peak:ControlAttribute.CornerRadius" Value="5"></Setter>
+        <Style.Resources>
+            <Style TargetType="{x:Type Image}">
+                <Setter Property="Width" Value="113"></Setter>
+                <Setter Property="Height" Value="113"></Setter>
+                <Setter Property="Cursor" Value="Hand"></Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+
+
+</ResourceDictionary>

@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:PeakUI.WPF.Converters">
+    <converter:MathMultipleConverter x:Key="MathAddyConverter" />
+    <converter:MathMultipleConverter x:Key="MathSubtractConverter" Operation="Subtract" />
+    <converter:MathMultipleConverter x:Key="MathMultiplyConverter" Operation="Multiply" />
+    <converter:MathMultipleConverter x:Key="MathDivideConverter" Operation="Divide" />
+    <converter:IsEqualConverter x:Key="IsEqualConverter" />
+    <converter:IsNullOrEmptyConverter x:Key="IsNullOrEmptyConverter" />
+    <converter:VisibilityToBooleanConverter x:Key="VisibilityToBooleanConverter" />
+    <converter:BooleanToVisibilityConverter x:Key="BooleanToVisibleConverter" />
+    <converter:BooleanToVisibilityConverter x:Key="BooleanToCollapsedConverter"
+                                            FalseValue="Visible"
+                                            TrueValue="Collapsed" />
+    <converter:BooleanToVisibilityConverter x:Key="BooleanToHiddenConverter"
+                                            FalseValue="Visible"
+                                            TrueValue="Hidden" />
+</ResourceDictionary>

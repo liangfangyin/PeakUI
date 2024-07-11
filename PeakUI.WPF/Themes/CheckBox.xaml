@@ -1,0 +1,125 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:peak="clr-namespace:PeakUI.WPF">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/PeakUI.WPF;component/Themes/Resources/Color.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/PeakUI.WPF;component/Themes/Resources/Size.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/PeakUI.WPF;component/Themes/Icon.xaml"></ResourceDictionary> 
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="PeakCheckBox" TargetType="{x:Type CheckBox}">
+        <Setter Property="Background" Value="{DynamicResource BrandSolidColorBrush}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Height" Value="22" /> 
+        <Setter Property="Content" Value=""></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="BorderBrush" Value="{StaticResource LightBorderSolidColorBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="peak:ControlAttribute.CornerRadius" Value="{DynamicResource CornerRadius3}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding Height}"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="chkSelect" Grid.Column="0" CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}" 
+                            HorizontalAlignment="Left" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid  Width="{TemplateBinding Height}" Height="{TemplateBinding Height}">
+                                <peak:Icon  Type="CheckFill" Foreground="{DynamicResource WhiteForeground}"  Width="{TemplateBinding Height}" Height="{TemplateBinding Height}" /> 
+                            </Grid>
+                        </Border>
+                        <Border x:Name="chkNoSelect" Grid.Column="0" CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}" 
+                            HorizontalAlignment="Left" Background="{DynamicResource DefaultBackground}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid  Width="{TemplateBinding Height}" Height="{TemplateBinding Height}"></Grid>
+                        </Border>
+                        <ContentPresenter Grid.Column="1" Content="{TemplateBinding Content}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"/> 
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="chkSelect" Property="Visibility" Value="Visible"></Setter>
+                            <Setter TargetName="chkNoSelect" Property="Visibility" Value="Collapsed"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="chkSelect" Property="Visibility" Value="Collapsed"></Setter>
+                            <Setter TargetName="chkNoSelect" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="chkSelect" Property="Opacity" Value="{StaticResource Un5Opcity}"></Setter>
+                            <Setter TargetName="chkNoSelect" Property="Opacity" Value="{StaticResource Un5Opcity}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--默认-->
+    <Style BasedOn="{StaticResource PeakCheckBox}" TargetType="{x:Type CheckBox}"></Style>
+
+    <!--切换按钮-->
+    <Style x:Key="PeakFontCheckBox" BasedOn="{StaticResource PeakCheckBox}" TargetType="{x:Type CheckBox}">
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Background" Value="{DynamicResource BrandSolidColorBrush}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="BorderBrush" Value="{StaticResource LightBorderSolidColorBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="peak:ControlAttribute.CornerRadius" Value="15" />
+        <Setter Property="peak:CheckBoxAttribute.OneText" Value="男" />
+        <Setter Property="peak:CheckBoxAttribute.TwoText" Value="女" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Grid>
+                        <Border x:Name="chkNoSelect" CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}" 
+                            HorizontalAlignment="Left" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Height="{TemplateBinding Height}">
+                            <WrapPanel>
+                                <Border Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" 
+                                        CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}"   Width="80" >
+                                    <TextBlock Text="{Binding Path=(peak:CheckBoxAttribute.OneText), RelativeSource={RelativeSource Mode=TemplatedParent}}"   Foreground="White"   VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                </Border>
+                                <Border Height="{TemplateBinding Height}"
+                                         CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}"  Width="80">
+                                    <TextBlock Text="{Binding Path=(peak:CheckBoxAttribute.TwoText), RelativeSource={RelativeSource Mode=TemplatedParent}}"     VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                </Border>
+                            </WrapPanel>
+                        </Border>
+                        <Border  x:Name="chkSelect" Visibility="Collapsed" CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}" 
+                            HorizontalAlignment="Left"  Height="{TemplateBinding Height}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <WrapPanel>
+                                <Border Height="{TemplateBinding Height}"
+                                         CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}"  Width="80">
+                                    <TextBlock Text="{Binding Path=(peak:CheckBoxAttribute.OneText), RelativeSource={RelativeSource Mode=TemplatedParent}}"  VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                </Border>
+                                <Border Height="{TemplateBinding Height}"  Background="{TemplateBinding Background}" 
+                                         CornerRadius="{Binding Path=(peak:ControlAttribute.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}"  Width="80" >
+                                    <TextBlock Text="{Binding Path=(peak:CheckBoxAttribute.TwoText), RelativeSource={RelativeSource Mode=TemplatedParent}}"   Foreground="White"     VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                </Border>
+                            </WrapPanel>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="chkSelect" Property="Visibility" Value="Collapsed"></Setter>
+                            <Setter TargetName="chkNoSelect" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="chkSelect" Property="Visibility" Value="Visible"></Setter>
+                            <Setter TargetName="chkNoSelect" Property="Visibility" Value="Collapsed"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

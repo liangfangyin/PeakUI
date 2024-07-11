@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="BrandColor">#3168FF</Color>
+    <Color x:Key="BrandDarkColor">#337ecc</Color>
+    <Color x:Key="BrandLightColor">#79bbff</Color>
+    <Color x:Key="BrandLight2Color">#a0cfff</Color>
+    <Color x:Key="BrandLight3Color">#c6e2ff</Color>
+    <Color x:Key="BrandLight4Color">#d9ecff</Color>
+    <Color x:Key="BrandLight5Color">#ecf5ff</Color>
+    <Color x:Key="SuccessColor">#67C23A</Color>
+    <Color x:Key="SuccessDarkColor">#529b2e</Color>
+    <Color x:Key="SuccessLightColor">#95d475</Color>
+    <Color x:Key="SuccessLight2Color">#b3e19d</Color>
+    <Color x:Key="SuccessLight3Color">#d1edc4</Color>
+    <Color x:Key="SuccessLight4Color">#e1f3d8</Color>
+    <Color x:Key="SuccessLight5Color">#f0f9eb</Color>
+    <Color x:Key="WarningColor">#E6A23C</Color>
+    <Color x:Key="WarningDarkColor">#b88230</Color>
+    <Color x:Key="WarningLightColor">#eebe77</Color>
+    <Color x:Key="WarningLight2Color">#f3d19e</Color>
+    <Color x:Key="WarningLight3Color">#f8e3c5</Color>
+    <Color x:Key="WarningLight4Color">#faecd8</Color>
+    <Color x:Key="WarningLight5Color">#fdf6ec</Color>
+    <Color x:Key="DangerColor">#F56C6C</Color>
+    <Color x:Key="DangerDarkColor">#c45656</Color>
+    <Color x:Key="DangerLightColor">#f89898</Color>
+    <Color x:Key="DangerLight2Color">#fab6b6</Color>
+    <Color x:Key="DangerLight3Color">#fcd3d3</Color>
+    <Color x:Key="DangerLight4Color">#fde2e2</Color>
+    <Color x:Key="DangerLight5Color">#fef0f0</Color>
+    <Color x:Key="InfoColor">#909399</Color>
+    <Color x:Key="PrimaryTextColor">#303133</Color>
+    <Color x:Key="RegularTextColor">#606266</Color>
+    <Color x:Key="SecondaryTextColor">#909399</Color>
+    <Color x:Key="PlaceholderTextColor">#A8ABB2</Color>
+    <Color x:Key="DisabledTextColor">#C0C4CC</Color>
+    <Color x:Key="DarkerBorderColor">#CDD0D6</Color>
+    <Color x:Key="DarkBorderColor">#D4D7DE</Color>
+    <Color x:Key="LightBorderColor">#DCDFE6</Color>
+    <Color x:Key="LighterBorderColor">#EBEEF5</Color>
+    <Color x:Key="ExtralightBorderColor">#F2F6FC</Color>
+    <Color x:Key="DarkerFillColor">#E6E8EB</Color>
+    <Color x:Key="DarkFillColor">#EBEDF0</Color>
+    <Color x:Key="BaseFillColor">#F0F2F5</Color>
+    <Color x:Key="LightFillColor">#F5F7FA</Color>
+    <Color x:Key="LighterFillColor">#FAFAFA</Color>
+    <Color x:Key="ExtralightFillColor">#FAFCFF</Color>
+    <Color x:Key="WriteFillColor">#FFFFFF</Color>
+    <Color x:Key="BlackColor">#000000</Color>
+    <Color x:Key="TransparentColor">Transparent</Color>
+
+
+    <SolidColorBrush x:Key="DefaultForeground" Color="{DynamicResource BlackColor}" />
+    <SolidColorBrush x:Key="DefaultBackground" Color="{DynamicResource WriteFillColor}" />
+    <SolidColorBrush x:Key="WhiteForeground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="BlackForeground" Color="#000000" />
+    <SolidColorBrush x:Key="BrandSolidColorBrush">#3168FF</SolidColorBrush>
+    <SolidColorBrush x:Key="BrandDarkSolidColorBrush">#337ecc</SolidColorBrush>
+    <SolidColorBrush x:Key="BrandLightSolidColorBrush">#79bbff</SolidColorBrush>
+    <SolidColorBrush x:Key="BrandLight2SolidColorBrush">#a0cfff</SolidColorBrush>
+    <SolidColorBrush x:Key="BrandLight3SolidColorBrush">#c6e2ff</SolidColorBrush>
+    <SolidColorBrush x:Key="BrandLight4SolidColorBrush">#d9ecff</SolidColorBrush>
+    <SolidColorBrush x:Key="BrandLight5SolidColorBrush">#ecf5ff</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessSolidColorBrush">#67C23A</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessDarkSolidColorBrush">#529b2e</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessLightSolidColorBrush">#95d475</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessLight2SolidColorBrush">#b3e19d</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessLight3SolidColorBrush">#d1edc4</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessLight4SolidColorBrush">#e1f3d8</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessLight5SolidColorBrush">#f0f9eb</SolidColorBrush>
+    <SolidColorBrush x:Key="WarningSolidColorBrush">#E6A23C</SolidColorBrush>
+    <SolidColorBrush x:Key="WarningDarkSolidColorBrush">#b88230</SolidColorBrush>
+    <SolidColorBrush x:Key="WarningLightSolidColorBrush">#eebe77</SolidColorBrush>
+    <SolidColorBrush x:Key="WarningLight2SolidColorBrush">#f3d19e</SolidColorBrush>
+    <SolidColorBrush x:Key="WarningLight3SolidColorBrush">#f8e3c5</SolidColorBrush>
+    <SolidColorBrush x:Key="WarningLight4SolidColorBrush">#faecd8</SolidColorBrush>
+    <SolidColorBrush x:Key="WarningLight5SolidColorBrush">#fdf6ec</SolidColorBrush>
+    <SolidColorBrush x:Key="DangerSolidColorBrush">#F56C6C</SolidColorBrush>
+    <SolidColorBrush x:Key="DangerDarkSolidColorBrush">#c45656</SolidColorBrush>
+    <SolidColorBrush x:Key="DangerLightSolidColorBrush">#f89898</SolidColorBrush>
+    <SolidColorBrush x:Key="DangerLight2SolidColorBrush">#fab6b6</SolidColorBrush>
+    <SolidColorBrush x:Key="DangerLight3SolidColorBrush">#fcd3d3</SolidColorBrush>
+    <SolidColorBrush x:Key="DangerLight4SolidColorBrush">#fde2e2</SolidColorBrush>
+    <SolidColorBrush x:Key="DangerLight5SolidColorBrush">#fef0f0</SolidColorBrush>
+    <SolidColorBrush x:Key="InfoSolidColorBrush">#909399</SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryTextSolidColorBrush">#303133</SolidColorBrush>
+    <SolidColorBrush x:Key="RegularTextSolidColorBrush">#606266</SolidColorBrush>
+    <SolidColorBrush x:Key="SecondaryTextSolidColorBrush">#909399</SolidColorBrush>
+    <SolidColorBrush x:Key="PlaceholderTextSolidColorBrush">#A8ABB2</SolidColorBrush>
+    <SolidColorBrush x:Key="DisabledTextSolidColorBrush">#C0C4CC</SolidColorBrush>
+    <SolidColorBrush x:Key="DarkerBorderSolidColorBrush">#CDD0D6</SolidColorBrush>
+    <SolidColorBrush x:Key="DarkBorderSolidColorBrush">#D4D7DE</SolidColorBrush>
+    <SolidColorBrush x:Key="LightBorderSolidColorBrush">#DCDFE6</SolidColorBrush>
+    <SolidColorBrush x:Key="LighterBorderSolidColorBrush">#EBEEF5</SolidColorBrush>
+    <SolidColorBrush x:Key="ExtralightBorderSolidColorBrush">#F2F6FC</SolidColorBrush>
+    <SolidColorBrush x:Key="DarkerFillSolidColorBrush">#E6E8EB</SolidColorBrush>
+    <SolidColorBrush x:Key="DarkFillSolidColorBrush">#EBEDF0</SolidColorBrush>
+    <SolidColorBrush x:Key="BaseFillSolidColorBrush">#F0F2F5</SolidColorBrush>
+    <SolidColorBrush x:Key="LightFillSolidColorBrush">#EEF9FF</SolidColorBrush>
+    <SolidColorBrush x:Key="LighterFillSolidColorBrush">#FAFAFA</SolidColorBrush>
+    <SolidColorBrush x:Key="ExtralightFillSolidColorBrush">#FAFCFF</SolidColorBrush>
+    <SolidColorBrush x:Key="WriteFillSolidColorBrush">#FFFFFF</SolidColorBrush>
+    <SolidColorBrush x:Key="BlackSolidColorBrush">#000000</SolidColorBrush>
+    <SolidColorBrush x:Key="TransparentSolidColorBrush">Transparent</SolidColorBrush>
+
+</ResourceDictionary>

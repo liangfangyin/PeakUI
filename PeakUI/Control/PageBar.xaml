@@ -1,0 +1,23 @@
+﻿<Window x:Class="PeakUI.Control.PageBar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PeakUI.Control"
+        xmlns:peak="clr-namespace:PeakUI.WPF;assembly=PeakUI.WPF"
+        mc:Ignorable="d"
+        Title="PageBar" Height="600" Width="1200">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <WrapPanel Margin="10">
+                    <TextBlock FontSize="20">进度条</TextBlock>
+                </WrapPanel>
+                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <peak:PageBar peak:PageBar.PageSize="10" peak:PageBar.PageIndex="1" peak:PageBar.Total="156"></peak:PageBar>
+                </WrapPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:peak="clr-namespace:PeakUI.WPF">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/PeakUI.WPF;component/Themes/Resources/Color.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <!--基础内容容器-->
+    <Style TargetType="{x:Type peak:Container}">
+        <Setter Property="peak:ContainerAttribute.ContentBrush" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type peak:Container}">
+                    <Grid Background="{Binding Path=(peak:ContainerAttribute.ContentBrush),RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                        <ContentControl x:Name="Content"   
+                                            Height="{TemplateBinding Height}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{Binding Path=(peak:ContainerAttribute.Content), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Foreground="{DynamicResource BlackForeground}" />
+                    </Grid> 
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--左右内容容器-->
+    <Style x:Key="LeftRightContainer" TargetType="{x:Type peak:Container}">
+        <Setter Property="peak:ContainerAttribute.LeftContentBrush" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="peak:ContainerAttribute.RightContentBrush" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate  TargetType="{x:Type peak:Container}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid  Grid.Column="0" Background="{Binding Path=(peak:ContainerAttribute.LeftContentBrush),RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                            <ContentControl x:Name="LeftContent" 
+                                            Height="{TemplateBinding Height}"  HorizontalAlignment="Left"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{Binding Path=(peak:ContainerAttribute.LeftContent), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Foreground="{DynamicResource BlackForeground}" />
+                        </Grid>
+                        <Grid  Grid.Column="1">
+                            <ContentControl x:Name="RightContent"
+                                            Background="{Binding Path=(peak:ContainerAttribute.RightContentBrush),RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Height="{TemplateBinding Height}"  HorizontalAlignment="Left"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{Binding Path=(peak:ContainerAttribute.RightContent), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Foreground="{DynamicResource BlackForeground}" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--上下内容容器-->
+    <Style x:Key="TopHeaderContainer" TargetType="{x:Type peak:Container}">
+        <Setter Property="peak:ContainerAttribute.HeaderContentBrush" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="peak:ContainerAttribute.FoodContentBrush" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate  TargetType="{x:Type peak:Container}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid  Grid.Row="0" Background="{Binding Path=(peak:ContainerAttribute.HeaderContentBrush),RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                            <ContentControl x:Name="HeaderContent" 
+                                            Height="{TemplateBinding Height}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{Binding Path=(peak:ContainerAttribute.HeaderContent), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Foreground="{DynamicResource BlackForeground}" />
+                        </Grid>
+                        <Grid  Grid.Row="1" Background="{Binding Path=(peak:ContainerAttribute.FoodContentBrush),RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                            <ContentControl x:Name="FootContent" 
+                                            Height="{TemplateBinding Height}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{Binding Path=(peak:ContainerAttribute.FoodContent), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Foreground="{DynamicResource BlackForeground}" />
+                        </Grid>
+                         
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--上中下内容容器-->
+    <Style x:Key="TopCenterHeaderContainer" TargetType="{x:Type peak:Container}">
+        <Setter Property="peak:ContainerAttribute.HeaderContentBrush" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="peak:ContainerAttribute.ContentBrush" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="peak:ContainerAttribute.FoodContentBrush" Value="{DynamicResource TransparentSolidColorBrush}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate  TargetType="{x:Type peak:Container}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Background="{Binding Path=(peak:ContainerAttribute.HeaderContentBrush),RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                            <ContentControl x:Name="HeaderContent"
+                                            Height="{TemplateBinding Height}" VerticalAlignment="Top" 
+                                            Content="{Binding Path=(peak:ContainerAttribute.HeaderContent), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Foreground="{DynamicResource BlackForeground}" />
+                        </Grid>
+                        <Grid Grid.Row="1" Background="{Binding Path=(peak:ContainerAttribute.ContentBrush),RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                            <ContentControl x:Name="CenterContent"
+                                            Height="{TemplateBinding Height}" VerticalAlignment="Top" 
+                                            Content="{Binding Path=(peak:ContainerAttribute.Content), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Foreground="{DynamicResource BlackForeground}" />
+                        </Grid>
+                        <Grid Grid.Row="2" Background="{Binding Path=(peak:ContainerAttribute.FoodContentBrush),RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                            <ContentControl x:Name="FootContent"
+                                            Height="{TemplateBinding Height}" VerticalAlignment="Bottom" 
+                                            Content="{Binding Path=(peak:ContainerAttribute.FoodContent), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                            Foreground="{DynamicResource BlackForeground}" />
+                        </Grid> 
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

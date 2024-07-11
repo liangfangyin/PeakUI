@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:peak="clr-namespace:PeakUI.WPF">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/PeakUI.WPF;component/Themes/Resources/Color.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type Border}">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource LightBorderSolidColorBrush}"></Setter> 
+    </Style>
+
+    <Style x:Key="DefaultPager" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{DynamicResource LightBorderSolidColorBrush}"></Setter>
+        <Setter Property="CornerRadius" Value="10"></Setter>
+        <Setter Property="Background" Value="{DynamicResource DefaultBackground}"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Margin" Value="1,1,0,0"></Setter>
+    </Style>
+
+
+</ResourceDictionary>
